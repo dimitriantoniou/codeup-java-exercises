@@ -83,12 +83,34 @@ for (int i=1;i<=userInteger;i++){
     if (!userConfirmation){
         break;
  */
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Would you like to see your grade?");
+        String userInput = scanner.next();
+        Scanner scannerTwo = new Scanner (System.in);
+        boolean gradestrue = userInput.equalsIgnoreCase("y");
 
-
-
-    }
-}
-
+        if(gradestrue){
+            do{
+                System.out.println("What was your numerical score from 0 to 100?");
+                int userGrade = scanner.nextInt();
+                if (userGrade >=99){
+                    System.out.println("You got an A+!");
+                }else if (userGrade >=90){
+                    System.out.println("You got an A!");
+                }else if (userGrade >= 80){
+                    System.out.println("You got a B!");
+                }else if (userGrade >= 70){
+                    System.out.println("You got a C...");
+                }else if (userGrade >= 60){
+                    System.out.println("You got a D -_-");
+                }else{
+                    System.out.println("You failed :(");
+                }
+                System.out.println("Do you want to check another grade?");
+                userInput = scanner.next();
+                gradestrue = userInput.equalsIgnoreCase("y");
+            }while (gradestrue);
+        }
 
 
     }
