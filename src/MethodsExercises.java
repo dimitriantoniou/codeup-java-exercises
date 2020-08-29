@@ -67,7 +67,6 @@ public class MethodsExercises {
         //if no, exit out
     }
 
-
     public static void main(String[] args) {
         System.out.println(addition(1, 4));
         System.out.println(subtraction(1, 4));
