@@ -53,6 +53,20 @@ public class MethodsExercises {
         }
     }
 
+    public static void rollDice (){
+        Scanner dice = new Scanner (System.in);
+        System.out.println("Enter the number of sides on your pair of dice.");
+        System.out.println("Do you want to roll the dice? Y/N");
+        String userRoll = dice.next();
+        if(userRoll.equalsIgnoreCase("y")){
+            //roll the n-sided dice; generate random numbers with. random and java.lang.math
+            //System.out.println(roll results
+        }
+        System.out.println("Do you want to continue? Y/N");
+        //if yes, rollDice()
+        //if no, exit out
+    }
+
 
     public static void main(String[] args) {
         System.out.println(addition(1, 4));
