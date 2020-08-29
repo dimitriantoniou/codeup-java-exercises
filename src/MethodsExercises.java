@@ -21,19 +21,7 @@ public class MethodsExercises {
     public static int modulus(int a, int b) {
         return a % b;
     }
-    //Create a method that validates that user input is in a certain range
 
-
-
-
-
-    public static void main(String[] args) {
-        System.out.println(addition(1, 4));
-        System.out.println(subtraction(1, 4));
-        System.out.println(multiplication(1, 4));
-        System.out.println(division(1, 4));
-        System.out.println(modulus(1, 4));
-    }
     public static int validateInteger(int min, int max){
         System.out.print("Enter a number between 1 and 10: ");
         Scanner sc = new Scanner (System.in);
@@ -42,7 +30,7 @@ public class MethodsExercises {
             System.out.println("That works!");
             return userInput;
         }else{
-            System.out.println("That doens\'t work :( Please enter another number!");
+            System.out.println("That doesn't work :( Please enter another number!");
             return validateInteger(min, max);
         }
     }
@@ -64,4 +52,14 @@ public class MethodsExercises {
             System.out.println("Bye bye!");
         }
     }
+
+
+    public static void main(String[] args) {
+        System.out.println(addition(1, 4));
+        System.out.println(subtraction(1, 4));
+        System.out.println(multiplication(1, 4));
+        System.out.println(division(1, 4));
+        System.out.println(modulus(1, 4));
+    }
+
 }
