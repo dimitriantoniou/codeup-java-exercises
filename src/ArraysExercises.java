@@ -1,3 +1,4 @@
+/*
 import java.util.Arrays;
 import static java.util.Arrays.copyOf;
 
@@ -26,7 +27,7 @@ public class ArraysExercises {
     // int [] numbers = {1, 2, 3, 4, 5};
     // System.out.println(Arrays.toString(numbers));
     // System.out.println(numbers);
-    Person person1 = new Person("dimitr");
+    Person person1 = new Person("dimitri");
     Person person2 = new Person("bernice");
     Person person3 = new Person("caitlin");
 
@@ -34,3 +35,4 @@ public class ArraysExercises {
 
 }
 
+*/
