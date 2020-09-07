@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.lang.*;
+import java.util.Random;
 
 public class MethodsExercises2 {
 
@@ -50,7 +52,7 @@ public class MethodsExercises2 {
         //if input IS in the min max range, print X is between A and B.
     public static int getInteger(int min, int max) {
         Scanner sc = new Scanner(System.in);//imports scanner
-        System.out.printf("Please enter a number between %d and %d: ",min,max);//requests a user input
+        System.out.printf("Please enter a number between %d and %d: %n",min,max);//requests a user input
 
         if (sc.hasNextInt()) {//if that input is a number...
             int userInput = sc.nextInt();//assign it to int userinput
@@ -69,7 +71,7 @@ public class MethodsExercises2 {
 
     public static int getFactorial(int integer){
             Scanner scan = new Scanner(System.in);
-            System.out.println("Please enter a number between 1 and 10: ");
+            System.out.println("Please enter a number between 1 and 10: %n");
             long input = scan.nextInt();
             long fact = input;
             if (input >1 && input <10){//if it's in range:
@@ -84,6 +86,29 @@ public class MethodsExercises2 {
             return 0;
     }
 
+    public static void diceRoll(){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter the number of sides on your dice: ");
+            int sides = scanner.nextInt();
+            int resultA=0;
+            int resultB=0;
+            int min = 1;
+            int max = sides;
+            System.out.println("Do you want to roll? y/n");
+            String keepRolling = scanner.next();
+            if (keepRolling.equalsIgnoreCase("y")){
+                resultA = (int)(Math.random()*(max-min+1)+min);
+                resultB = (int)(Math.random()*(max-min+1)+min);
+            }
+            System.out.printf("You rolled a %d and a %d%n",resultA,resultB);
+            System.out.println("Do you want to roll again? y/n");
+            keepRolling=scanner.next();
+            if(keepRolling.equalsIgnoreCase("y")){
+                diceRoll();
+            }
+            System.out.println("Thanks for playing!");
+    }
+
 
         public static void main (String [] args){
             addition(1,1);
@@ -92,6 +117,7 @@ public class MethodsExercises2 {
             division(10,3);
             getInteger(1,10);
             getFactorial(2);
+            diceRoll();
     }
 
 }
