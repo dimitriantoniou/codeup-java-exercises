@@ -68,6 +68,29 @@ public class ControlFlowExercises2 {
         } while (userContinue);
 
         //4 grade application
+        Scanner scanGrade = new Scanner (System.in);
+        boolean gradesContinue = true;
+        do{
+            System.out.println("Please enter a number grade from 0 to 100");
+            int numberGrade = scanGrade.nextInt();
+            if (numberGrade>=88){
+                System.out.println("A :D");
+            }else if (numberGrade >=80){
+                System.out.println("B!");
+            }else if (numberGrade >=67){
+                System.out.println("C");
+            }else if (numberGrade >=60){
+                System.out.println("D...");
+            }else{
+                System.out.println("You failed :/");
+            }
+
+            System.out.println("Would you like to continue?");
+            String userGradeResponse = scanGrade.next();
+            if (!userGradeResponse.equalsIgnoreCase("u")){
+                gradesContinue = false;
+            }
+        }while (gradesContinue);
 
 
     }
