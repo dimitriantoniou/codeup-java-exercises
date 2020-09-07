@@ -50,21 +50,38 @@ public class MethodsExercises2 {
         //if input IS in the min max range, print X is between A and B.
     public static int getInteger(int min, int max) {
         Scanner sc = new Scanner(System.in);//imports scanner
-        System.out.printf("Please enter a number between %d and %d: ",min,max);
+        System.out.printf("Please enter a number between %d and %d: ",min,max);//requests a user input
 
-        if (sc.hasNextInt()) {
-            int userInput = sc.nextInt();
-            if(userInput >= min && userInput <= max){
-                return userInput;
-            }else{
-                System.out.println("That number is out of range!");
+        if (sc.hasNextInt()) {//if that input is a number...
+            int userInput = sc.nextInt();//assign it to int userinput
+            if(userInput >= min && userInput <= max){//if it IS in range:
+                return userInput;//return the value
+            }else{//if it's NOT in range
+                System.out.println("That number is out of range!");//ask them to try again
                 return getInteger(min,max);
             }
-        }else{
+        }else{ //if input is not a number, restarts
             System.out.println("Not a number - please try again!");
             getInteger(min, max);
             }
-        return 0;
+        return 0;//successful exit
+    }
+
+    public static int getFactorial(int integer){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Please enter a number between 1 and 10: ");
+            long input = scan.nextInt();
+            long fact = input;
+            if (input >1 && input <10){//if it's in range:
+                for (int i=1;i<=input;i++){
+                    fact = fact * i;
+                }
+                System.out.printf("%d! = %d%n",input,fact);
+            }else{
+                System.out.println("Sorry, that is not a valid input. Please try again!");
+                getFactorial(integer);
+            }
+            return 0;
     }
 
 
@@ -74,6 +91,7 @@ public class MethodsExercises2 {
             multiplication(2,2);
             division(10,3);
             getInteger(1,10);
+            getFactorial(2);
     }
 
 }
