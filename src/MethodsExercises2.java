@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MethodsExercises2 {
 
         //Basic Arithmetic
@@ -40,6 +42,12 @@ public class MethodsExercises2 {
             System.out.printf("%d / %d = %d with a remainder of %d%n",e,f,quotient,remainder);
             return quotient;
         }
+
+        //2 Create a method that validates that user input is in a certain range
+        public static int getInteger(int min, int max);
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("Enter a number between %d and %d: %n",min,max);
+        int userInput = sc.nextInt();
 
         public static void main (String [] args){
             addition(1,1);
