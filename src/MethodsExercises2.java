@@ -44,16 +44,36 @@ public class MethodsExercises2 {
         }
 
         //2 Create a method that validates that user input is in a certain range
-        public static int getInteger(int min, int max);
-        Scanner sc = new Scanner(System.in);
-        System.out.printf("Enter a number between %d and %d: %n",min,max);
-        int userInput = sc.nextInt();
+        // set min and max parameters
+        //prompt user for an input
+        //if input is not in the min max range, re-prompt user for an input
+        //if input IS in the min max range, print X is between A and B.
+    public static int getInteger(int min, int max) {
+        Scanner sc = new Scanner(System.in);//imports scanner
+        System.out.printf("Please enter a number between %d and %d: ",min,max);
+
+        if (sc.hasNextInt()) {
+            int userInput = sc.nextInt();
+            if(userInput >= min && userInput <= max){
+                return userInput;
+            }else{
+                System.out.println("That number is out of range!");
+                return getInteger(min,max);
+            }
+        }else{
+            System.out.println("Not a number - please try again!");
+            getInteger(min, max);
+            }
+        return 0;
+    }
+
 
         public static void main (String [] args){
             addition(1,1);
             subtraction(1,1);
             multiplication(2,2);
             division(10,3);
-
+            getInteger(1,10);
     }
+
 }
