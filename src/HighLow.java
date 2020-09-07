@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HighLow {
-    public static void main (String [] args){
+    public static void main(String[] args) {
 
 //Game picks a random number between 1 and 100.
 //Prompts user to guess the number.
@@ -13,23 +13,28 @@ public class HighLow {
         int min = 0;
         int max = 100;
         int count = 0;
-        int randomNumber = (int)(Math.random()*(max-min+1)+min);
-        System.out.println("What number am I thinking of between 1 and 100? You have three guesses");
-        Scanner sc = new Scanner(System.in);
-        int userGuess = sc.nextInt();
+        int randomNumber = (int) (Math.random() * (max - min + 1) + min);
 
-        if (userGuess == randomNumber && count<4) {
-            System.out.println("Good Guess!");
-        }else if (count>=4) {
-            System.out.println("Sorry, you're out of guesses.");
-        }else if (userGuess > randomNumber && count<4) {
-            System.out.println("LOWER");
-            count++;
-            userGuess = sc.nextInt();
-        }else if (userGuess < randomNumber && count<4) {
-            System.out.println("Higher");
-            count++;
-            userGuess = sc.nextInt();
+        while (count < 3) {
+            System.out.println("What number am I thinking of between 1 and 100? You have three guesses");
+            Scanner sc = new Scanner(System.in);
+            int userGuess = sc.nextInt();
+            if (userGuess == randomNumber) {
+                System.out.println("Good Guess!");
+                break;
+            } else if (userGuess > randomNumber) {
+                System.out.println("LOWER");
+                count++;
+                continue;
+            } else if (userGuess < randomNumber) {
+                System.out.println("Higher");
+                count++;
+                continue;
+            }
         }
     }
 }
+
+//features to add
+//countodwn of remaining guesses
+//new question after the first time
