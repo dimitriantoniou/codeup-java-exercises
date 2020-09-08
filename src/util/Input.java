@@ -5,8 +5,7 @@ public class Input {
     private static Scanner sc = new Scanner(System.in);
 
     public String getString(){
-        String newString = sc.next();
-        return newString;
+        return sc.next();
     }
 
     public void yesNo() {
