@@ -4,82 +4,41 @@ import java.util.Scanner;
 public class Input {
     private static Scanner sc = new Scanner(System.in);
 
-    public static String getString() {
-        String returnString = sc.nextLine();
-        return returnString;
-    }
-    public static String getString(String prompt){
-        System.out.printf("%s%n",prompt);
-        String returnString = sc.nextLine();
-        return returnString;
+    public String getString(){
+        String newString = sc.next();
+        return newString;
     }
 
-    public static Boolean yesNo() {
+    public boolean yesNo(){
+        System.out.println("Would you like to continue? y/n");
         String userInput = sc.nextLine();
-        if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public static boolean yesNo(String prompt){
-        System.out.printf("%s%n", prompt);
-        String userInput = sc.nextLine();
-        if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")) {
-            return true;
-        } else {
-            return false;
-        }
+        if (userInput.equalsIgnoreCase("y") || (userInput.equalsIgnoreCase("yes"))) {
+            System.out.println("True");
+        }else{
+            System.out.println("False");
     }
 
-    public static int getInt(int min, int max) {
-        System.out.printf("Enter a number between %d and %d: %n", min, max);
+    public int getInt(int min, int max){
+        System.out.printf("Please give an integer between %d and %d",min,max);
         int input = Integer.parseInt(sc.nextLine());
-        if (input < min) {
-            System.out.println("The number is lower than the min - try again! ");
-            return getInt(min, max);
-        }else if (input>max){
-            System.out.println("The nuymber is higher than the max - try again! ");
-            return getInt(min,max);
-        }
-        System.out.printf("Great! %d is between %d and %d %n!",input,min,max);
-        return input;
+        if(input>min && input<max) {
+            System.out.printf("Please try again!");
+        }else{
+            System.out.printf("%d works",sc.nextInt());
+            return input;
     }
 
-    public static int getInt(){
-        int input = Integer.parseInt(sc.nextLine());
-        return input;
+    public int getInt(){
+
     }
 
-    public static int getInt(String prompt){
-        System.out.printf("%s%n", prompt);
-        int input = Integer.parseInt(sc.nextLine());
-        return input;
+    public double getDouble(double min, double max){
+        System.out.printf("Please enter a double between %d and %d. Hint: use a decimal!",min,max)
+            return ;
     }
 
-    public static double getDouble(double min, double max){
-        System.out.printf("Enter a number between %f and %f: %n",min,max);
-        double input = Double.parseDouble(sc.nextLine());
-        if(input<min){
-            System.out.printf("Sorry, %f is below the min of %f. Please try again!%n",input,min);
-            return getDouble(min,max);
-        }else if (input>max){
-            System.out.printf("Sorry, %f is above the max of %f. Please try again!%n",input,max);
-            return getDouble(min,max);
-        }
-        System.out.printf("Great! %f is between %f and %f",input,min,max);
-        return input;
-    }
-
-    public static double getDouble(){
-        double input = Double.parseDouble(sc.nextLine());
-        return input;
-    }
-
-    public static double getDouble(String prompt){
-        System.out.printf("%s%n",prompt);
-        double input = Double.parseDouble(sc.nextLine());
-        return input;
+    public double getDouble(){
+        return ;
     }
 
 }
