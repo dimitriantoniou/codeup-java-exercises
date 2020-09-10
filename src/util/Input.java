@@ -6,7 +6,7 @@ public class Input {
 
     public static String getString(){
         String returnString = sc.nextLine();
-        return returnString
+        return returnString;
     }
 
     public static String getString(String prompt){
@@ -54,7 +54,7 @@ public class Input {
     }
 
     public static double getDouble(double min, double max) {
-        System.out.printf("Please enter a double between %d and %d. Hint: use a decimal!", min, max)
+        System.out.printf("Please enter a double between %d and %d. Hint: use a decimal!", min, max);
         double input = Double.parseDouble(sc.nextLine());
         if (input < min) {
             System.out.println("That is too low - try again! ");
