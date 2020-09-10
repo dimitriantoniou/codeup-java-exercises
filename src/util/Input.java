@@ -4,47 +4,77 @@ import java.util.Scanner;
 public class Input {
     private static Scanner sc = new Scanner(System.in);
 
-    public String getString(){
-        return sc.next();
+    public static String getString(){
+        String returnString = sc.nextLine();
+        return returnString
     }
 
-    public void yesNo() {
-        System.out.println("Would you like to continue? y/n");
+    public static String getString(String prompt){
+        System.out.printf("%s%n",prompt);
+        String returnString = sc.nextLine();
+        return returnString;
+    }
+
+    public static boolean yesNo() {
+        String userInput = sc.nextLine();
+        if (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")){
+    return true;
+        }else{
+    return false;
+        }
+    }
+
+    public static boolean yesNo(String prompt){
+        System.out.printf("%s%n",prompt);
         String userInput = sc.nextLine();
         if (userInput.equalsIgnoreCase("y") || (userInput.equalsIgnoreCase("yes"))) {
-            System.out.println("True");
+            return true;
         } else {
-            System.out.println("False");
+            return false;
         }
     }
 
-    public int getInt(int min, int max){//syntax error expecting a ; here
+    public static int getInt(int min, int max){
         System.out.printf("Please give an integer between %d and %d",min,max);
         int input = Integer.parseInt(sc.nextLine());
-        if(input>min && input<max) {
-            System.out.printf("%d works",sc.nextInt());
-        }else{
-            System.out.printf("Please try again!");
-    }
-
-    //public int getInt(){
-      //  int input = Integer.parseInt(sc.nextLine());
-        //return input;
-    //}
-
-    public double getDouble(double min, double max){
-        System.out.printf("Please enter a double between %d and %d. Hint: use a decimal!",min,max)
-            double inputDouble = Double.parseDouble(sc.nextLine());
-        if (inputDouble>min && inputDouble < max){
-            System.out.printf("Geat, %d is between %d and %d.",inputDouble,min,max);
-        }else{
-            System.out.println("Sorry, please try again.");
+        if(input<min) {
+            System.out.println("That is too low - try again! ");
+            return getInt(min, max);
+        }else if(input>max) {
+            System.out.println("That is too high - try again! ");
+            return getInt(min, max);
         }
+        System.out.printf("Great! %d is between %d and %d.",input,min,max);
+        return input;
     }
 
-   // public double getDouble(){
-      //  return ;
-    //}
+    public static int getInt(){
+        int input = Integer.parseInt(sc.nextLine());
+        return input;
+    }
 
-}
+    public static double getDouble(double min, double max) {
+        System.out.printf("Please enter a double between %d and %d. Hint: use a decimal!", min, max)
+        double input = Double.parseDouble(sc.nextLine());
+        if (input < min) {
+            System.out.println("That is too low - try again! ");
+            return getDouble(min, max);
+        } else if (input > max) {
+            System.out.println("That is too high - try again! ");
+            return getDouble(min, max);
+        }
+        System.out.printf("Great, %d is between %d and %d. ", input, min, max);
+        return input;
+    }
+
+   public static double getDouble(){
+      double input = Double.parseDouble(sc.nextLine());
+      return input;
+    }
+
+    public static double getDouble(String prompt){
+        System.out.printf("%s%n",prompt);
+        double input = Double.parseDouble(sc.nextLine());
+        return input;
+    }
 }
