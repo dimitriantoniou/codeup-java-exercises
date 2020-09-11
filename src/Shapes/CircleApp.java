@@ -8,3 +8,5 @@ public class CircleApp {
             Circle userCircle = new Circle();
         }
     }
+
+    //code continues to run and has to be manually stopped - why???
