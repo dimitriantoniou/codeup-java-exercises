@@ -80,8 +80,8 @@ public class MoviesApplication {
                             }
                     }
             }
-            continueSearch = Input.yesNo("Would you like to continue with our Movies application?");
-
+            continueSearch = Input.yesNo("Would you like to continue with our Movies application? Yes/No");
+            //keep asking based on different answers
             // Bonus: Add functionality to allow a user to add a new movie to the list.
 
 
