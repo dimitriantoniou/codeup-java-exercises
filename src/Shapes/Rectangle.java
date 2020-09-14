@@ -6,8 +6,9 @@ public class Rectangle {
     //create a getArea method
     //create a getPerimeter method
 
+
+
     public Rectangle(double length, double width){
-        length = length;
         width = width;
     }
 
