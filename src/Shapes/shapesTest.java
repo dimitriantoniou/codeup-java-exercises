@@ -6,7 +6,11 @@ public class shapesTest {
         //verify that the getPerimeter and getArea methods return 18 and 20, respectively.
         //create a variable of the type Rectangle named box2 and assign it a new instance of the Square class that has a side value of 5.
         //verify that the getPerimeter and getArea methods return 20 and 25, respectively.
+        var Measurable = myShape;
 
+
+        /*
+        //tests from inheritance and polymorphism
         Rectangle box1 = new Rectangle(4,5);
         System.out.print(box1.getPerimeter());
         System.out.print(box1.getArea());
@@ -14,5 +18,6 @@ public class shapesTest {
         Rectangle box2 = new Square(5);
         System.out.print(box2.getPerimeter());
         System.out.print(box2.getArea());
+         */
     }
 }
