@@ -1,23 +1,20 @@
 package Shapes;
 
 public class Rectangle {
-    //protected properties for length and width
-    //define a constructor that accepts 2 numbers for length and width, set those properties
-    //create a getArea method
-    //create a getPerimeter method
 
+    protected double length;//protected property for length
+    protected double width;//protected property for width
 
-
-    public Rectangle(double length, double width){
-        width = width;
+    public Rectangle(double length, double width){//define a constructor that accepts 2 numbers for length and width, set those properties
+        this.length=length;
+        this.width=width;
     }
 
-    public static int getArea(){
-        return this.length*this.width;
+    public double getArea(){    //create a getArea method
+        return length*width;
     }
 
-    public static int getPerimeter(){
-        return 2*(this.length*this.width);
+    public double getPerimeter(){    //create a getPerimeter method
+        return 2*(length+width);
     }
-
 }
