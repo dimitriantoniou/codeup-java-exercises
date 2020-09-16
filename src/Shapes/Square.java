@@ -1,6 +1,6 @@
 package Shapes;
 
-public class Square extends Quadrilateral implements Measurable {
+public class Square extends Quadrilateral {
 
     public Square (double side){    //define a constructor that accepts one argument, side
         super(side,side);    //call parent constructor to set both length and width = side

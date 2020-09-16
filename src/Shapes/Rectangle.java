@@ -6,8 +6,7 @@ public class Rectangle extends Quadrilateral implements Measurable {
     protected double width;//protected property for width
 
     public Rectangle(double length, double width){//define a constructor that accepts 2 numbers for length and width, set those properties
-        this.length=length;
-        this.width=width;
+        super(length,width);
     }
 
     public double getArea(){    //create a getArea method
