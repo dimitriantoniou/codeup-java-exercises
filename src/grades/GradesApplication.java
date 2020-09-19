@@ -33,6 +33,25 @@ public class GradesApplication {
         justin.addGrade(50);
         justin.addGrade(70);
 
+        ryan.recordAttendance("1-01-2020","A");
+        ryan.recordAttendance("1-02-2020","A");
+        ryan.recordAttendance("1-03-2020","A");
+        ryan.recordAttendance("1-04-2020","A");
+        zach.recordAttendance("1-01-2020","P");
+        zach.recordAttendance("1-02-2020","P");
+        zach.recordAttendance("1-03-2020","P");
+        zach.recordAttendance("1-04-2020","P");
+        fer.recordAttendance("1-01-2020","P");
+        fer.recordAttendance("1-02-2020","A");
+        fer.recordAttendance("1-03-2020","P");
+        fer.recordAttendance("1-04-2020","A");
+        justin.recordAttendance("1-01-2020","P");
+        justin.recordAttendance("1-02-2020","P");
+        justin.recordAttendance("1-03-2020","P");
+        justin.recordAttendance("1-04-2020","A");
+
+
+
         /*
         System.out.println(ryan.getName()+ " grade average is "+ryan.getGradeAverage());
         System.out.println(zach.getName()+": grade average is "+zach.getGradeAverage());

@@ -33,8 +33,9 @@ public class Student {
     }
 
     public void recordAttendance(String date, String value){
-
+        attendance.put(date,value);
     }
+
 
     public static void main(String[] args) {
         Student dimitri = new Student("Dimitri");
