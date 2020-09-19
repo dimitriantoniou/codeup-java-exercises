@@ -31,8 +31,6 @@ public class GradesApplication {
         justin.addGrade(50);
         justin.addGrade(70);
 
-
-
         /*
         System.out.println(ryan.getName()+ " grade average is "+ryan.getGradeAverage());
         System.out.println(zach.getName()+": grade average is "+zach.getGradeAverage());
@@ -50,13 +48,14 @@ public class GradesApplication {
 
         boolean continueApplication = true;
 
-        while (continueApplication){
+        //while (continueApplication){
             System.out.println("Welcome! Here are our student github usernames:");
-            for (String username: students.keySet()){
-                System.out.printf("%s",username);
-            }
+        for (String key: students.keySet()){
+            System.out.println(key + " ");
         }
-        continueApplication = Input.yesNo("Would you like to search again? (y/n)");
 
     }
-}
+        //}
+     //   continueApplication = Input.yesNo("Would you like to search again? (y/n)");
+
+    }
