@@ -1,6 +1,8 @@
 package grades;
 
 import java.util.HashMap;
+import java.util.Scanner;
+
 import util.Input;
 
 public class GradesApplication {
@@ -38,7 +40,6 @@ public class GradesApplication {
         System.out.println(justin.getName()+": grade average is "+justin.getGradeAverage());
         */
 
-        //Print the list of GitHub usernames out to the console,
         //ask the user which student they would like to see more information about.
         // The user should enter a GitHub username (i.e. one of the keys in your map).
         // If the given input does not match up with a key in your map, tell the user that no users with that username were found.
@@ -51,9 +52,12 @@ public class GradesApplication {
         //while (continueApplication){
             System.out.println("Welcome! Here are our student github usernames:");
         for (String key: students.keySet()){
-            System.out.println(key + " ");
+            System.out.println(key + " "); //Print the list of GitHub usernames out to the console,
         }
-
+        System.out.println("What student would you like to select?");
+        Scanner sc = new Scanner(System.in);
+        var userInput = sc.next();
+        System.out.println("You have selected: "+userInput);
     }
         //}
      //   continueApplication = Input.yesNo("Would you like to search again? (y/n)");
