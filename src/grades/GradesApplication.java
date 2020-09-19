@@ -59,7 +59,7 @@ public class GradesApplication {
                 userInput = sc.next();
             }
             gradeAverage = students.get(userInput).getGradeAverage();        // If the given username does exist, display information about that student, including their name and their grades.
-            System.out.printf("Student: %s | Grades: %s", userInput, gradeAverage);
+            System.out.printf("Student: %s | Grades: %s%n", userInput, gradeAverage);
 
             //After the information is displayed, the application should ask the user if they want to continue,
             // and keep running so long as the answer is yes.
@@ -68,6 +68,8 @@ public class GradesApplication {
             Scanner scanner = new Scanner(System.in);
             if (scanner.next().equalsIgnoreCase("y")) {
                 continueApplication = true;
+            }else{
+                continueApplication = false;
             }
             System.out.print("Thank you for accessing the grades portal!");
         }
