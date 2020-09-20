@@ -36,6 +36,18 @@ public class Student {
         attendance.put(date,value);
     }
 
+    //working on attendance grade method
+    public double calculateAttendance(Double present,Double absent){
+        int daysOfClass=0;
+        for(int i=0;i<attendance.size();i++){
+            daysOfClass ++;
+        }
+        int daysPresent=0;
+            for(int i=0;i<attendance.size();i++){
+            if
+        }
+        //(present)/(present+absent);
+    }
 
     public static void main(String[] args) {
         Student dimitri = new Student("Dimitri");
