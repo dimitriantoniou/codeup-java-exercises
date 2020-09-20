@@ -35,7 +35,7 @@ public class Student {
     public void recordAttendance(String date, String value){
         attendance.put(date,value);
     }
-
+/*
     //working on attendance grade method
     public double calculateAttendance(Double present,Double absent){
         int daysOfClass=0;
@@ -48,6 +48,9 @@ public class Student {
         }
         //(present)/(present+absent);
     }
+
+    //how do I iterate a hashmap?
+ */
 
     public static void main(String[] args) {
         Student dimitri = new Student("Dimitri");
