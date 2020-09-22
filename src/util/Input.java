@@ -48,11 +48,25 @@ public class Input {
         return input;
     }
 
+
+    /* original
     public static int getInt(){
         int input = Integer.parseInt(sc.nextLine());
         return input;
     }
 
+     */
+
+    //after exceptoins exercise
+    public int getInt() {
+        String input = getString();
+        try {
+            return Integer.valueOf(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return getInt();
+        }
+    }
     public static double getDouble(double min, double max) {
         System.out.printf("Please enter a double between %d and %d. Hint: use a decimal!", min, max);
         double input = Double.parseDouble(sc.nextLine());
@@ -67,9 +81,25 @@ public class Input {
         return input;
     }
 
+
+    /*original
    public static double getDouble(){
       double input = Double.parseDouble(sc.nextLine());
       return input;
+    }
+
+     */
+
+    //after exceptions exercise
+    public static double getDouble() {
+        System.out.println("Input: ");
+        String input = getString();
+        try{
+            return Double.valueOf(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return getDouble();
+        }
     }
 
     public static double getDouble(String prompt){
