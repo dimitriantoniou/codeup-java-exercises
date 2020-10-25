@@ -37,6 +37,7 @@ it uses all the memory on the stack and we end up with a stack overflow error. â
 import java.util.Scanner;
 
 public class Adventure {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //start the game
@@ -52,12 +53,39 @@ public class Adventure {
         System.out.println("Dwarf: follow in the footsteps of Gimli, granting you strength and endurance.");
         System.out.println("Elf: like Legolas himself, experience speed and endurance.");
         System.out.println("Ranger: choosing Aragorn, King of Gondor, grants you strength and speed.");
+        Scanner roleChoice = new Scanner(System.in);
         System.out.println("What will you choose?");
-        String role = scanner.nextLine();
-        if (role.equalsIgnoreCase("Dwarf") ||role.equalsIgnoreCase("Elf")||role.equalsIgnoreCase("Ranger")){
+        String role = roleChoice.nextLine();
+        if (role.equals("Dwarf") ||role.equals("Elf")||role.equals("Ranger")){
             System.out.println(role+"! A fine choice.");
         }else{
             System.out.println("I'm sorry, I don't recognize this. Please choose again");
+            //System.out.println("What path will you choose?");
         }
+/*
+        int strength=0;
+        int speed=0;
+        int endurance=0;
+        if (role == "Dwarf"){
+            strength = 7;
+            speed=3;
+            endurance=7;
+        }
+        else if (role == "Elf"){
+            strength=3;
+            speed=7;
+            endurance=7;
+        }
+        else if (role == "Ranger"){
+            strength=7;
+            speed=7;
+            endurance=3;
+        }
+        System.out.println(player + " the "+role+". Fine ring to it. Because of your chosen path, you start your journey with the following attributes:");
+        System.out.println("Strength: "+strength);
+        System.out.println("Endurance: "+endurance);
+        System.out.println("Speed: "+speed);
+ */
+        int health=10;
     }
 }
