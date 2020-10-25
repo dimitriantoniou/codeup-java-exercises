@@ -53,16 +53,9 @@ public class Adventure {
         System.out.println("Elf: like Legolas himself, experience speed and endurance.");
         System.out.println("Ranger: choosing Aragorn, King of Gondor, grants you strength and speed.");
         System.out.println("What will you choose?");
-        String role;
-        if (scanner.nextLine()=="Dwarf"){
-            role="dwarf";
-            System.out.println("Dwarf! A fine choice.");
-        }else if (scanner.nextLine()=="Elf"){
-            role="elf";
-            System.out.println("Elf! A fine choice.");
-        }else if(scanner.nextLine()=="Ranger"){
-            role="ranger";
-            System.out.println("Ranger! A fine choice.");
+        String role = scanner.nextLine();
+        if (role.equalsIgnoreCase("Dwarf") ||role.equalsIgnoreCase("Elf")||role.equalsIgnoreCase("Ranger")){
+            System.out.println(role+"! A fine choice.");
         }else{
             System.out.println("I'm sorry, I don't recognize this. Please choose again");
         }
