@@ -39,16 +39,32 @@ import java.util.Scanner;
 public class Adventure {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("You have entered the portal to the world of Middle Earth. Would you like to continue?y/n");
-        boolean beginGame = scanner.nextLine().equalsIgnoreCase("y");
-        if (beginGame) {
+        //start the game
+        System.out.println("You have entered the portal to the world of Middle Earth. Would you like to continue? Y/N");
+        boolean enterGame = scanner.next().equalsIgnoreCase("y");
+        if (enterGame) {
             System.out.println("Excellent. Welcome to your destiny.");
-            else if (!beginGame){
-                System.out.println("I am sorry to hear that. Please return when you are ready.");
-                System.out.println("Would you like to return to the world of Middle Earth?");
-                //beginGame = scanner.nextLine().equalsIgnoreCase("y");
-            }
-
+            }else{System.out.println("Come back when you are worthy.");
+        }
+        System.out.println("What is your name, traveler?");
+        String player = scanner.next();
+        System.out.println("Greetings, " + player +"! I am Gandalf the White, keeper of Middle Earth. Now that we're acquainted, you must choose your path:");
+        System.out.println("Dwarf: follow in the footsteps of Gimli, granting you strength and endurance.");
+        System.out.println("Elf: like Legolas himself, experience speed and endurance.");
+        System.out.println("Ranger: choosing Aragorn, King of Gondor, grants you strength and speed.");
+        System.out.println("What will you choose?");
+        String role;
+        if (scanner.nextLine()=="Dwarf"){
+            role="dwarf";
+            System.out.println("Dwarf! A fine choice.");
+        }else if (scanner.nextLine()=="Elf"){
+            role="elf";
+            System.out.println("Elf! A fine choice.");
+        }else if(scanner.nextLine()=="Ranger"){
+            role="ranger";
+            System.out.println("Ranger! A fine choice.");
+        }else{
+            System.out.println("I'm sorry, I don't recognize this. Please choose again");
         }
     }
 }
