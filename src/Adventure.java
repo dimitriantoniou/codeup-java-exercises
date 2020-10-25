@@ -37,7 +37,26 @@ it uses all the memory on the stack and we end up with a stack overflow error. â
 import java.util.Scanner;
 
 public class Adventure {
+    public static void attack(){
+        int attackRoll=(int)(Math.random()*(3));
+        String attackType = "";
+        if (attackRoll==1){
+            attackType="Rock";
+        }else if (attackRoll==2){
+            attackType="Paper";
+        }else{
+            attackType="Scissor";
+        }
+        int damage= (int)(Math.random()*(3));
+        System.out.println("You attack with "+attackType+" and deal your enemy a blow of "+damage+" damage!");
+    }
+    public static void defend(){
+    }
+    public static void hide(){
+    }
+    public static void run(){
 
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //start the game
@@ -47,6 +66,7 @@ public class Adventure {
             System.out.println("Excellent. Welcome to your destiny.");
             }else{System.out.println("Come back when you are worthy.");
         }
+        //get player name
         System.out.println("What is your name, traveler?");
         String player = scanner.next();
         System.out.println("Greetings, " + player +"! I am Gandalf the White, keeper of Middle Earth. Now that we're acquainted, you must choose your path:");
@@ -55,6 +75,7 @@ public class Adventure {
         System.out.println("Ranger: choosing Aragorn, King of Gondor, grants you strength and speed.");
         Scanner roleChoice = new Scanner(System.in);
         System.out.println("What will you choose?");
+        //get player role
         String role = roleChoice.nextLine();
         if (role.equals("Dwarf") ||role.equals("Elf")||role.equals("Ranger")){
             System.out.println(role+"! A fine choice.");
@@ -87,5 +108,12 @@ public class Adventure {
         System.out.println("Speed: "+speed);
  */
         int health=10;
+        attack();
+        attack();
+        attack();
+        attack();
+        attack();
+        attack();
+
     }
 }
