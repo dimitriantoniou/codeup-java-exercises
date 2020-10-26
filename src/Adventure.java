@@ -37,6 +37,7 @@ it uses all the memory on the stack and we end up with a stack overflow error. â
 import java.util.Scanner;
 
 public class Adventure {
+    public static int damage=0;
     public static void attack(){
         int attackRoll=(int)(Math.random()*(3));
         String attackType = "";
@@ -47,10 +48,21 @@ public class Adventure {
         }else{
             attackType="Scissor";
         }
-        int damage= (int)(Math.random()*(3));
+        damage= (int)(Math.random()*(3));
         System.out.println("You attack with "+attackType+" and deal your enemy a blow of "+damage+" damage!");
     }
     public static void defend(){
+        int defendRoll=(int)(Math.random()*(3));
+        String defendType="";
+        if(defendRoll==1){
+            defendType="Scissor";
+        }else if(defendRoll==2){
+            defendType="Rock";
+        }else{
+            defendType="Paper";
+        }
+        System.out.println("You defend with "+defendType+" . ");
+
     }
     public static void hide(){
     }
@@ -82,7 +94,12 @@ public class Adventure {
         }else{
             System.out.println("I'm sorry, I don't recognize this. Please choose again");
             //System.out.println("What path will you choose?");
+
+
         }
+        int health=10;
+        System.out.println("Wait - Urukai are approaching. We must act. What will you do? Attack/Defend");
+        int urukaiHealth=6;
 /*
         int strength=0;
         int speed=0;
@@ -106,14 +123,14 @@ public class Adventure {
         System.out.println("Strength: "+strength);
         System.out.println("Endurance: "+endurance);
         System.out.println("Speed: "+speed);
- */
-        int health=10;
-        attack();
-        attack();
-        attack();
-        attack();
-        attack();
-        attack();
+ */ Scanner sc1 = new Scanner (System.in);
+        String userAction=sc1.nextLine();
+        if(userAction.equals("Attack")){
+            attack();
+            urukaiHealth-=damage;
+        }else if (userAction.equals("Defend")){
+            defend();
+        }System.out.println("The Urukai now has health of "+damage);
 
     }
 }
